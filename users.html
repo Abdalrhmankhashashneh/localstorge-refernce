@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="result"> </h1>
+    <script>
+        var x = JSON.parse(localStorage.getItem("a"))
+        for (i = 0; i < x.aa.length; i++) {
+            var ob = x.aa[i];
+            document.getElementById("result").innerHTML += ob.result + " <br><br><br>"
+        }
+        function readuser(a) {
+            return " username is : " + a.name + "<br>  the user email : " + a.email + " <br> the user password is : " + a.password + " <br> the user result is : " + a.result + " <br><br> ******************* <br><br>";
+        }
+    </script>
+</body>
+
+</html>

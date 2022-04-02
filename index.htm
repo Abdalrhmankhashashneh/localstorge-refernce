@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nada</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+
+    <input type="text" class="in" placeholder="enter your name">
+    <input type="email" class="in" placeholder="enter your email">
+    <input type="password" class="in" placeholder="enter your password">
+    <input type="number" class="in" placeholder="enter your result">
+    <input type="submit" onclick="fil()">
+
+
+
+    <script>
+        var a = { aa: [] }
+
+        function user(name, email, password, result) {
+            this.name = name;
+            this.email = email;
+            this.password = password;
+            this.result = result;
+        }
+
+        function fil() {
+            alert("work")
+            var input = document.getElementsByClassName('in')
+
+            var x = new user(input[0].value, input[1].value, input[2].value, input[3].value)
+
+            var x1 = JSON.parse(localStorage.getItem("a"))
+            x1.aa.push(x)
+            for (i = 0; i < x1.aa.length; i++) {
+                window.alert(readuser(x1.aa[0]))
+            }
+            localStorage.setItem("a", JSON.stringify(x1))
+
+        }
+
+        function readuser(a) {
+            return " username is : " + a.name + "<br>  the user email" + a.email + " <br> the user password is : " + a.password + " <br> the user result is : " + a.result;
+        }
+
+    </script>
+</body>
+
+</html>
