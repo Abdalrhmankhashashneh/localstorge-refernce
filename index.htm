@@ -21,6 +21,9 @@
 
     <script>
         var a = { aa: [] }
+        if (localStorage == null) {
+            localStorage.setItem(a);
+        }
 
         function user(name, email, password, result) {
             this.name = name;
